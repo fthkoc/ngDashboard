@@ -13,25 +13,29 @@ import { SectionHealthComponent } from './sections/section-health/section-health
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    SectionSalesComponent,
-    SectionOrdersComponent,
-    SectionHealthComponent,
-    BarChartComponent,
-    LineChartComponent,
-    PieChartComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ChartsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      NavbarComponent,
+      SidebarComponent,
+      SectionSalesComponent,
+      SectionOrdersComponent,
+      SectionHealthComponent,
+      BarChartComponent,
+      LineChartComponent,
+      PieChartComponent,
+      ServerComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      ChartsModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
