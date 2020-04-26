@@ -54,6 +54,7 @@ namespace Advantage.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                //endpoints.MapControllerRoute(name: "default", pattern: "api/{controller}/{action}/{id?}");
             });
         }
     }
