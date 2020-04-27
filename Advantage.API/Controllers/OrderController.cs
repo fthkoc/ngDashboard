@@ -35,5 +35,46 @@ namespace Advantage.API.Controllers
             
             return Ok(response);
         }
+
+        [HttpGet("ByState")]
+        public IActionResult ByState()
+        {
+            var data = _context.Orders.Include(o => o.Customer).ToList();
+
+			var groupedData = data.GroupBy(o => o.Customer.State).ToList()
+				.Select(group => new {
+					State = group.Key,
+					Total = group.Sum(x => x.Total)
+				})
+				.OrderByDescending(result => result.Total)
+				.ToList();
+            
+            return Ok(groupedData);
+        }
+
+		[HttpGet("ByCustomer/{n}")]
+        public IActionResult ByCustomer(int n)
+        {
+            var data = _context.Orders.Include(o => o.Customer).ToList();
+
+			var groupedData = data.GroupBy(o => o.Customer.ID).ToList()
+				.Select(group => new {
+					Name = _context.Customers.Find(group.Key).Name,
+					Total = group.Sum(x => x.Total)
+				})
+				.OrderByDescending(result => result.Total)
+				.Take(n)
+				.ToList();
+            
+            return Ok(groupedData);
+        }
+
+		[HttpGet("GetOrder/{id}", Name="GetOrder")]
+        public IActionResult GetOrder(int id)
+        {
+            var data = _context.Orders.Include(o => o.Customer)
+				.First(o => o.ID == id);
+			return Ok(data);
+		}
     }
 }

@@ -27,6 +27,13 @@ namespace Advantage.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => {
+                options.AddPolicy("CORSPolicy_DEV", 
+                    c => c.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod());
+            });
+
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DEV_DB")));
 
@@ -41,6 +48,7 @@ namespace Advantage.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors("CORSPolicy_DEV");
             }
 
             seed.SeedData(20, 1000);
@@ -54,7 +62,6 @@ namespace Advantage.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                //endpoints.MapControllerRoute(name: "default", pattern: "api/{controller}/{action}/{id?}");
             });
         }
     }
