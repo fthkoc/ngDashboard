@@ -8,7 +8,7 @@ namespace Advantage.API.Models
         public PaginatedResponse(IEnumerable<T> data, int pageIndex, int pageSize)
         {
             Data = data.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            Total = Data.Count();
+            Total = data.Count();
         }
 
         public int Total { get; set; }
