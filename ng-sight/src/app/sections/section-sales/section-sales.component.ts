@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SalesDataService } from 'src/app/services/sales-data.service';
+import { BarChartComponent } from 'src/app/charts/bar-chart/bar-chart.component';
+import { PieChartComponent } from 'src/app/charts/pie-chart/pie-chart.component';
+import { LineChartComponent } from 'src/app/charts/line-chart/line-chart.component';
 
 @Component({
   selector: 'app-section-sales',
