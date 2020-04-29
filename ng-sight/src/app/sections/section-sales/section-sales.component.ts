@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesDataService } from 'src/app/services/sales-data.service';
 
 @Component({
   selector: 'app-section-sales',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionSalesComponent implements OnInit {
 
-  constructor() { }
+  salesDataByCustomer: any;
+  salesDataByState: any;
+
+  constructor(private salesData: SalesDataService) { }
 
   ngOnInit() {
+    this.salesData.getOrdersByState().subscribe(response => {
+      this.salesDataByState = response;
+    });
+
+    this.salesData.getOrdersByCustomer(5).subscribe(response => {
+      this.salesDataByCustomer = response;
+    });
   }
 
 }
