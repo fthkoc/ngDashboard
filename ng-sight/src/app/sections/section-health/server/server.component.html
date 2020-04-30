@@ -3,7 +3,10 @@
     {{ serverInput.name }}
   </div>
   <div class="card-body server-status">
-    {{ serverInput.isOnline }}
+    {{ serverStatus }}
+    <button class="btn btn-default action" 
+      (click)="sendServerAction(serverInput.isOnline)">
+      {{ buttonText }}
+    </button>
   </div>
-  <button class="btn btn-default action" (click)="toggleStatus(serverInput.isOnline)">{{ buttonText }}</button>
 </div>

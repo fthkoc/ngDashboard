@@ -14,7 +14,7 @@ import { SectionHealthComponent } from './sections/section-health/section-health
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
-import { ServerComponent } from './server/server.component';
+import { ServerComponent } from './sections/section-health/server/server.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
 import { SalesDataService } from "./services/sales-data.service";
