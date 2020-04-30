@@ -24,7 +24,6 @@ export class SectionOrdersComponent implements OnInit {
   getOrders(): void {
     this.salesData.getOrders(this.page, this.limit)
       .subscribe(response => {
-        console.log('Response from getOrders(): ', response);
         this.orders = response['page']['data'];
         this.total = response['page'].total;
         this.loading = false;
@@ -32,13 +31,11 @@ export class SectionOrdersComponent implements OnInit {
   }
 
   goToPrevious(): void {
-    // console.log('Previous button clicked!');
     this.page--;
     this.getOrders();
   }
 
   goToNext(): void {
-    // console.log('Next button clicked!');
     this.page++;
     this.getOrders();
   }
