@@ -49,6 +49,9 @@ export class SectionHealthComponent implements OnInit, OnDestroy {
 
   sendMessage(msg: ServerMessage) {
     this.serverService.handleServerMessage(msg)
-      .subscribe(response => console.log('Message sent to the server:', msg), error => console.log('Error:', error));
+      .subscribe(
+        // response => console.log('SectionHealth::sendMessage()::Message sent to the server:', msg),
+        error => error != null ? console.log('SectionHealth::sendMessage()::Error:', error) : null
+      );
   }
 }

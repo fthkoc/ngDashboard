@@ -27,7 +27,7 @@ export class ServerService {
   handleError(error: any) {
     const errMsg = (error.message) ? error.message :
       error.status ? '${error.status} - ${error.statusText}' : 'Server error!';
-    console.log(errMsg);
+    console.log('ServerService::handleError():', errMsg);
     return throwError(errMsg);
   }
 
