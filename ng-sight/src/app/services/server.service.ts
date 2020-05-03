@@ -13,10 +13,9 @@ export class ServerService {
   constructor(private http: HttpClient) { }
 
   options = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept' : 'q=0,8;application/json;q=0.9'
-    })
+    headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'q=0,8;application/json;q=0.9')
   };
 
   getServers(): Observable<Server[]> {

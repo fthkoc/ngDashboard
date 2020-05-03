@@ -9,6 +9,7 @@ const theme = 'Default';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
+// tslint:disable:no-string-literal
 export class PieChartComponent implements OnInit {
 
   constructor() { }

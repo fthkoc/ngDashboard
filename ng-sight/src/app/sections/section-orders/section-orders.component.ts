@@ -7,15 +7,16 @@ import { SalesDataService } from 'src/app/services/sales-data.service';
   templateUrl: './section-orders.component.html',
   styleUrls: ['./section-orders.component.css']
 })
+// tslint:disable:no-string-literal
 export class SectionOrdersComponent implements OnInit {
-
-  constructor(private salesData: SalesDataService) { }
 
   orders: Order[] = [];
   total = 0;
   page = 1;
   limit = 10;
   loading = false;
+
+  constructor(private salesData: SalesDataService) { }
 
   ngOnInit() {
     this.getOrders();

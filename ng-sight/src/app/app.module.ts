@@ -17,8 +17,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { ServerComponent } from './sections/section-health/server/server.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
-import { SalesDataService } from "./services/sales-data.service";
-import { ServerService } from "./services/server.service";
+import { SalesDataService } from './services/sales-data.service';
+import { ServerService } from './services/server.service';
 
 @NgModule({
    declarations: [

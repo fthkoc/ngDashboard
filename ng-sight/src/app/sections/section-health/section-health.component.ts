@@ -6,13 +6,6 @@ import { first } from 'rxjs/operators/first';
 import { AnonymousSubscription } from 'rxjs/Subscription';
 import { ServerMessage } from 'src/app/models/server-message';
 
-// const SAMPLE_SERVERS = [
-//   { id: 1, name: 'dev-web', isOnline: true },
-//   { id: 2, name: 'dev-mail', isOnline: false },
-//   { id: 3, name: 'prod-web', isOnline: true },
-//   { id: 4, name: 'prod-mail', isOnline: true }
-// ];
-
 @Component({
   selector: 'app-section-health',
   templateUrl: './section-health.component.html',
@@ -20,10 +13,10 @@ import { ServerMessage } from 'src/app/models/server-message';
 })
 export class SectionHealthComponent implements OnInit, OnDestroy {
 
-  constructor(private serverService: ServerService) { }
-
   servers: Server[];
   timerSubscription: AnonymousSubscription;
+
+  constructor(private serverService: ServerService) { }
 
   ngOnInit() {
     this.refreshData();
