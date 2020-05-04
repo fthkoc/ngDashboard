@@ -24,7 +24,10 @@
 
 .action {
     display: block;
+    border-color: black;
+    border-width: 4px;
+    background-color: #161A1E;
     font-size: 0.7em;
-    margin-top: 12px;
+    margin-top: 36px;
     transition: 0.3;
 }

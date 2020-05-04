@@ -13,6 +13,7 @@ export class ServerComponent implements OnInit {
 
   color: string;
   buttonText: string;
+  buttonColor: string;
   serverStatus: string;
   isLoading: boolean;
 
@@ -28,17 +29,20 @@ export class ServerComponent implements OnInit {
       this.serverInput.isOnline = true;
       this.serverStatus = 'Online';
       this.color = '#66BB6A';
+      this.buttonColor = '#FF6B6B';
       this.buttonText = 'Shut Down';
     } else {
       this.serverInput.isOnline = false;
       this.serverStatus = 'Offline';
       this.color = '#FF6B6B';
+      this.buttonColor = '#66BB6A';
       this.buttonText = 'Start';
     }
   }
 
   makeLoading() {
     this.color = '#FFCA28';
+    this.buttonColor = '#FFCA28';
     this.buttonText = 'Pending...';
     this.isLoading = true;
     this.serverStatus = 'Loading';

@@ -4,7 +4,8 @@
   </div>
   <div class="card-body server-status">
     {{ serverStatus }}
-    <button class="btn btn-default action" 
+    <button class="btn btn-dark action"
+      [ngStyle]="{'color':buttonColor}" 
       (click)="sendServerAction(serverInput.isOnline)">
       {{ buttonText }}
     </button>
